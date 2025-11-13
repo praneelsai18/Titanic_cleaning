@@ -13,10 +13,10 @@ data = {
 }
 df = pd.DataFrame(data)
 
-print("✅ Dataset Loaded Successfully!")
+print("Dataset Loaded Successfully!")
 print(df.head())
 
-print("\n🧹 Data Cleaning Steps...")
+print("\n Data Cleaning Steps...")
 
 df['Age'].fillna(df['Age'].median(), inplace=True)
 df['Embarked'].fillna(df['Embarked'].mode()[0], inplace=True)
@@ -26,9 +26,9 @@ df.drop_duplicates(inplace=True)
 
 df['Fare'] = df['Fare'].astype(float)
 
-print("✅ Missing values handled and duplicates removed!")
+print(" Missing values handled and duplicates removed!")
 
-print("\n⚙️ Feature Engineering Steps...")
+print("\n Feature Engineering Steps...")
 
 df['Title'] = df['Name'].str.extract(' ([A-Za-z]+)\.', expand=False)
 
@@ -39,12 +39,13 @@ df['Embarked'] = df['Embarked'].map({'S': 0, 'C': 1, 'Q': 2})
 
 df.drop(['Name'], axis=1, inplace=True)
 
-print("✅ Feature engineering completed!")
+print(" Feature engineering completed!")
 
-print("\n📊 Cleaned and Processed Data:")
+print("\n Cleaned and Processed Data:")
 print(df.head())
 
 df.to_csv('processed_data.csv', index=False)
-print("\n💾 Processed data saved successfully as 'processed_data.csv'")
+print("\n Processed data saved successfully as 'processed_data.csv'")
 
-print("\n✅ Project Completed Successfully!")
+
+print("\n Project Completed Successfully!")
